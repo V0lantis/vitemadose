@@ -27,8 +27,10 @@ jobs:
         run: scripts/install
       - name: "Scraping..."
         run: scripts/scrape
-      - name: Sleep
-        run: 'sleep 120s'
+      - name: "Stats"
+        run: venv/bin/python -m scraper.centres_stats
+#      - name: Sleep
+#        run: 'sleep 120s'
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Automatic Update
